@@ -59,10 +59,9 @@ dotnet run
   - can be read from, and written to, by any code that has access to the object.
   - are often used to expose object data to other classes.
 - **`static` fields**
-  - means that it's shared among all instances of the class
   - are initialized before an instance of the class is created.
+  - means that it's shared among all instances of the class, all instances have the same value
   - When an object is created, **static fields are accessed using the class name, not an instance of the class**.
-  - The same value is shared by all instances of the class.
 - **`private` fields**:
   - can't be assigned a value from outside the class
 - **`readonly` fields**:
