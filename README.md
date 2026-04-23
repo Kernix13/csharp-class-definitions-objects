@@ -95,6 +95,8 @@ Namespaces are used in two ways:
 - The `using` directive eliminates the requirement to specify the name of the namespace for every class.
 - The global namespace is the "root" namespace: `global::System` always refers to the .NET System namespace.
 - Using namespaces to group related types together makes it easier to find and use them.
+- Use file-scoped namespaces (`;`) for new projects
+- Use block namespaces (`{}`) when multiple namespaces exist in a single file (rare but possible)
 - Implicit `global using` directives are added to new C# projects.
   - This means that you can use types defined in these namespaces without having to specify their fully qualified name or manually add a `using` directive.
   - The implicit aspect refers to the fact that the global using directives are added to a generated file in the project's `obj` directory.
@@ -104,6 +106,7 @@ Namespaces are used in two ways:
 ```cs
 using System;
 
+// File-scoped namespace (1 namespace per file)
 namespace Classes_M1;
 
 public class BankCustomer
