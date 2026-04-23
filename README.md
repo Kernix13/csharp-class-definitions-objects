@@ -122,15 +122,14 @@ public class BankCustomer
     // readonly: assign a unique value in the constructors (no value is assigned)
     public readonly string CustomerId;
 
-    // 1. parameterless constructor:
-    // static constructor
+    // 1. parameterless constructor (static):
     static BankCustomer()
     {
         Random random = new Random();
         s_nextCustomerId = random.Next(10000000, 20000000);
     }
 
-    // 2. constructor that accepts parameters
+    // 2. parameterless constructor
     public BankCustomer()
     {
         this.CustomerId = (s_nextCustomerId++).ToString("D10");
