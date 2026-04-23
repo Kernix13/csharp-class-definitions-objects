@@ -8,6 +8,8 @@ MS Learn And GitHub exercise on Classes: Create a console app that uses class de
 1. Update the class using static members.
 1. Create another class that implements private, public, and static members.
 
+> The important part of this exercise is the use of two classes, the 2nd of which uses the id from the 1st!
+
 <br>
 
 ## Prerequisites
@@ -198,6 +200,10 @@ public class BankAccount
 
 ### <span aria-hidden="true">3️⃣</span> Instances in Program.cs
 
+What is vital to understand in the code block below, is that `BankAccount` uses `CustomerId` from the `BankCustomer` class.
+
+> I am building my deliverable now but I can not see how to create a 2nd class and do something similar - **but IMO it is vital to be able to do that**!
+
 ```cs
 
 using Classes_M1;
@@ -221,6 +227,7 @@ Console.WriteLine($"BankCustomer 2: {customer2.FirstName} {customer2.LastName} {
 Console.WriteLine($"BankCustomer 3: {customer3.FirstName} {customer3.LastName} {customer3.CustomerId}");
 
 // Create instances of the class BankAccount
+// customer1.CustomerId -> CustomerId is from the BankCustomer class
 BankAccount account1 = new BankAccount(customer1.CustomerId);
 BankAccount account2 = new BankAccount(customer2.CustomerId, 1500, "Checking");
 BankAccount account3 = new BankAccount(customer3.CustomerId, 2500, "Checking");
