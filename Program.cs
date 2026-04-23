@@ -1,5 +1,4 @@
-﻿
-using Classes_M1;
+﻿using Classes_M1;
 
 string firstName = "Tim";
 string lastName = "Shao";
