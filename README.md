@@ -50,29 +50,42 @@ dotnet run
 
 <br>
 
-## Code Examples
+## Code Examples and notes
 
-### Important notes:
+### `public`, `static`, `private`, and `readonly` fields
 
-- The `new` operator is used to create objects based on a class constructor.
-- The `new` operator is used to create new instances of the class. The constructors are called when the new instances are created.
-- Each object has its own data fields, and the values assigned to the fields can be different for each object.
-- Public fields are accessible from outside the class.
-- They can be read from and written to by any code that has access to the object. Public fields are often used to expose object data to other classes.
-- Static fields are initialized before an instance of the class is created.
-- Static fields are accessed using the class name, not an instance of the class, and are shared among all instances of a class
-- The value of a static field is initialized before an instance of the class is created
-- When an object is created, static fields are accessed using the class name, not an instance of the class.
-- The same value is shared by all instances of the class.
+- **`public` fields**:
+  - are accessible from outside the class.
+  - can be read from, and written to, by any code that has access to the object.
+  - are often used to expose object data to other classes.
+- **`static` fields**
+  - means that it's shared among all instances of the class
+  - are initialized before an instance of the class is created.
+  - When an object is created, **static fields are accessed using the class name, not an instance of the class**.
+  - The same value is shared by all instances of the class.
+- **`private` fields**:
+  - can't be assigned a value from outside the class
+- **`readonly` fields**:
+  - The **`readonly` keyword** is used to declare a field that can be assigned a value only when it's declared or in a constructor
+  - can only be assigned a value when they're declared or in a constructor
+
+### static constructors
+
+- Static constructors are used to initialize static fields.
 - Static constructors are called when a class is loaded into memory.
 - A static constructor is called only once, regardless of how many instances of the class are created.
-- Static constructors are used to initialize static fields.
-- The `readonly` keyword is used to declare a field that can be assigned a value only when it’s declared or in a constructor
-- Readonly fields can be assigned a value only when they’re declared or in a constructor
-- `static` field: means that it's shared among all instances of the class
-- `static` constructor: initializes the `static` field - it is called when the class is loaded into memory, and before any instances of the class are created
+
+### `new` and `this` keywords + constructors
+
+- The `new` operator is used to create objects based on a class constructor (to create instances of the class).
+- The constructors are called when the new instances are created.
+- Each object has its own data fields, and the values assigned to the fields can be different for each object.
+- `static` constructor:
+  - initializes the `static` field
+  - it is called when the class is loaded into memory, and before any instances of the class are created
 - The `this` keyword refers to the current instance of the class. It's used to access fields, properties, and methods of the current instance
-- `private` field: can't be assigned a value from outside the class
+
+### Namespaces
 
 Namespaces are used in two ways:
 
@@ -82,7 +95,9 @@ Namespaces are used in two ways:
 - The `using` directive eliminates the requirement to specify the name of the namespace for every class.
 - The global namespace is the "root" namespace: `global::System` always refers to the .NET System namespace.
 - Using namespaces to group related types together makes it easier to find and use them.
-- Implicit `global using` directives are added to new C# projects. This means that you can use types defined in these namespaces without having to specify their fully qualified name or manually add a `using` directive. The implicit aspect refers to the fact that the global using directives are added to a generated file in the project's `obj` directory.
+- Implicit `global using` directives are added to new C# projects.
+  - This means that you can use types defined in these namespaces without having to specify their fully qualified name or manually add a `using` directive.
+  - The implicit aspect refers to the fact that the global using directives are added to a generated file in the project's `obj` directory.
 
 ### <span aria-hidden="true">1️⃣</span> BankCustomer Class
 
@@ -93,6 +108,7 @@ namespace Classes_M1;
 
 public class BankCustomer
 {
+    // private field initialized within the class
     private static int s_nextCustomerId;
 
     // public fields: FirstName, LastName, and CustomerId
@@ -111,13 +127,13 @@ public class BankCustomer
         s_nextCustomerId = random.Next(10000000, 20000000);
     }
 
-    // 2. Second constructor that accepts parameters
+    // 2. constructor that accepts parameters
     public BankCustomer()
     {
         this.CustomerId = (s_nextCustomerId++).ToString("D10");
     }
 
-    // 3. Third constructor that accepts parameters
+    // 3. constructor that accepts parameters
     public BankCustomer(string firstName, string lastName)
     {
         FirstName = firstName;
@@ -138,6 +154,7 @@ namespace Classes_M1;
 public class BankAccount
 {
 
+    // private field example
     private static int s_nextAccountNumber;
 
     // public fields
