@@ -228,7 +228,50 @@ BankAccount account3 = new BankAccount(customer3.CustomerId, 2500, "Checking");
 Console.WriteLine($"Account 1: Account # {account1.AccountNumber}, type {account1.AccountType}, balance {account1.Balance}, rate {BankAccount.InterestRate}, customer ID {account1.CustomerId}");
 Console.WriteLine($"Account 2: Account # {account2.AccountNumber}, type {account2.AccountType}, balance {account2.Balance}, rate {BankAccount.InterestRate}, customer ID {account2.CustomerId}");
 Console.WriteLine($"Account 3: Account # {account3.AccountNumber}, type {account3.AccountType}, balance {account3.Balance}, rate {BankAccount.InterestRate}, customer ID {account3.CustomerId}");
+```
 
+### Basic syntax
+
+```cs
+// onstructors: with static fields and static constructor
+public class Person
+{
+    public string personName;
+    public string personAge;
+
+    // Static field
+    public static string defaultName;
+    public static string defaultAge;
+
+    // Static constructor
+    static Person()
+    {
+        // Static field initialization
+        defaultName = "unknown";
+        defaultAge = "unknown";
+    }
+
+    public Person()
+    {
+        // Field initialization and constructor logic goes here.
+        personName = defaultName;
+        personAge = defaultAge;
+    }
+
+    public Person(string name)
+    {
+        // Field initialization and constructor logic goes here.
+        personName = name;
+        personAge = defaultAge;
+    }
+
+    public Person(string name, int age)
+    {
+        // Field initialization and constructor logic goes here.
+        personName = name;
+        personAge = age.ToString();
+    }
+}
 ```
 
 <!-- https://microsoftlearning.github.io/mslearn-develop-oop-csharp/Instructions/Labs/l2p2-lp1-m1-exercise-create-classes-and-objects-in-csharp.html -->
