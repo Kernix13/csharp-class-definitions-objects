@@ -10,6 +10,9 @@ MS Learn And GitHub exercise on Classes: Create a console app that uses class de
 
 > The important part of this exercise is the use of two classes, the 2nd of which uses the id from the 1st!
 
+> [!NOTE]
+> I should not have pushed the Microsoft code. I will have to replace the code with my own code.
+
 <br>
 
 ## Prerequisites
@@ -105,6 +108,7 @@ Namespaces are used in two ways:
 ### <span aria-hidden="true">1️⃣</span> BankCustomer Class
 
 ```cs
+// Why is this line grayed out in both files and yet they had us include it?
 using System;
 
 // File-scoped namespace (1 namespace per file)
