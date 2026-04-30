@@ -27,7 +27,7 @@ MS Learn And GitHub exercise on Classes: Create a console app that uses class de
 1. Clone this repository and switch into project folder
 
    ```sh
-   git clone https://github.com/Kernix13/csharp-class-definitions-objects
+   git clone https://github.com/Kernix13/csharp-class-definitions-objects.git
    cd csharp-class-definitions-objects
    ```
 
@@ -48,7 +48,7 @@ MS Learn And GitHub exercise on Classes: Create a console app that uses class de
 <!-- I t hink h3 elements should have an emoji/icon at the beginning -->
 
 ```sh
-git clone https://github.com/Kernix13/csharp-class-definitions-objects
+git clone https://github.com/Kernix13/csharp-class-definitions-objects.git
 cd csharp-class-definitions-objects
 dotnet run
 ```
